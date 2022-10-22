@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar'
 import Menu from '../components/menu/Menu'
 import TransactionList from '../components/TransactionList'
 function Home() {
+  
  const [transactions, setTransactions] = useState([]);
 
  const [ editTrx, setEditTrx] = useState({});

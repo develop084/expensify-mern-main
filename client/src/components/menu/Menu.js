@@ -15,9 +15,8 @@ const initialState = {
 };
 
 export default function Menu({ clickfun, editTrx }) {
-  
+ 
   const [form, setForm] = useState(initialState);
-
 
   useEffect(() => {
     if (editTrx !== {}) {
@@ -29,12 +28,10 @@ export default function Menu({ clickfun, editTrx }) {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-
   const dateHandler = (newValue) => {
     setForm({ ...form, date: newValue });
   };
 
-  
   async function create() {
     const response = await fetch("http://localhost:4000/transaction", {
       method: "POST",
@@ -64,15 +61,16 @@ export default function Menu({ clickfun, editTrx }) {
 
   async function submitHandler(e) {
     e.preventDefault();
-
-    if (editTrx === {}) {
+    if (editTrx.amount === undefined) {
       create();
     } else {
       update();
     }
     clickfun();
+    console.log(clickfun());
     setForm(initialState);
   }
+
   return (
     <div>
       <form onSubmit={submitHandler}>
