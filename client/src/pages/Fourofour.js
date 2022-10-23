@@ -1,7 +1,16 @@
+import { Result,Button} from "antd";
 import React from "react";
 
 function Fourofour() {
-  return <h1>404 Page not found !</h1>;
+  return   <Result
+  status="warning"
+  title="The Page Not found"
+  extra={
+    <Button type="primary" key="console">
+      Go to Home Page
+    </Button>
+  }
+/>
 }
 
 export default Fourofour;

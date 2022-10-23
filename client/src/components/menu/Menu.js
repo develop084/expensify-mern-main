@@ -5,7 +5,7 @@ import TextField from "@mui/material/TextField";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
-
+import Container from '@mui/material/Container';
 import "./menu.css";
 
 const initialState = {
@@ -74,6 +74,7 @@ export default function Menu({ clickfun, editTrx }) {
   return (
     <div>
       <form onSubmit={submitHandler}>
+      <Container>
         <Card sx={{ mt: 10, p: 5 }} className="container">
           <TextField
             type="number"
@@ -114,6 +115,7 @@ export default function Menu({ clickfun, editTrx }) {
             </Button>
           )}
         </Card>
+        </Container>
       </form>
     </div>
   );

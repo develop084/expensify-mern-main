@@ -2,6 +2,8 @@ import React,{useState, useEffect} from 'react'
 import Navbar from '../components/Navbar'
 import Menu from '../components/menu/Menu'
 import TransactionList from '../components/TransactionList'
+import "./home.css"
+
 function Home() {
   
  const [transactions, setTransactions] = useState([]);
@@ -23,9 +25,14 @@ function Home() {
 
   return (
     <div>
+
      <Navbar />
+     <div className="menu-container">
      <Menu editTrx={editTrx} clickfun={fetchTransactions}/>
+     </div>
+     <div className="menu-container">
      <TransactionList transactions={transactions} fetchTrx={fetchTransactions} setEditTrx ={setEditTrx}/>
+     </div>
     </div>
   )
 }
